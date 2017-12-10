@@ -5,6 +5,10 @@
 
 package test;
 
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 class ListNode {
  	
 		  int value;
@@ -20,6 +24,7 @@ class ListNode {
 }
     
 public class LinkList {
+	private static final HashMap Integer = null;
 	ListNode first;
 	
 	
@@ -102,6 +107,22 @@ public class LinkList {
 		}
 		System.out.println();
 	}
+		
+	public ListNode deleteDuplicates(ListNode head) {//The requirement from leetcode.com
+        ListNode current = head;
+        ListNode previous = null;
+        ArrayList<Integer> list = new ArrayList<Integer> ();
+        
+        while(current != null) {
+        	list.add(current.value);
+        	if( list.contains(current.value)) {
+        		previous.next = current.next;
+        	}else
+        	previous = current;
+        	current = current.next;
+        }
+        return current;
+    }
 	
 	 public ListNode reverseList (){          //not write yet,but is easy.
 		return null;		 
