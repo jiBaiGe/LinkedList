@@ -7,7 +7,8 @@ package test;
 
 import java.awt.List;
 import java.util.ArrayList;
-import java.util.HashMap;
+
+
 
 class ListNode {
  	
@@ -24,7 +25,7 @@ class ListNode {
 }
     
 public class LinkList {
-	private static final HashMap Integer = null;
+	
 	ListNode first;
 	
 	
@@ -114,18 +115,49 @@ public class LinkList {
         ArrayList<Integer> list = new ArrayList<Integer> ();
         
         while(current != null) {
-        	list.add(current.value);
+        	
         	if( list.contains(current.value)) {
         		previous.next = current.next;
-        	}else
+        	}else {
+        	list.add(current.value);
         	previous = current;
+        	}
         	current = current.next;
         }
         return current;
     }
 	
-	 public ListNode reverseList (){          //not write yet,but is easy.
-		return null;		 
+	
+	 public ListNode reverseList (ListNode head){          //通过外部数组存储存储
+//		  ListNode current = head;
+//		  ListNode previous = head;
+//		  if(current == null) {return head;}
+//		 ArrayList<Integer> list = new ArrayList<Integer> ();
+//		  while (current != null ) {
+//			  list.add(current.value);
+//			  current = current.next;	 
+//		  }
+//		  
+//		  for(int i = list.size()-1; previous !=null ; i--) {
+//			  previous.value = list.get(i);
+//			  previous = previous.next;
+//		  }return head;
+		 
+		 //第二种方法
+		 ListNode first =null;
+		 ListNode current = head;
+		 ListNode newnode =null;
+		 while (current != null) {
+			 
+			 newnode = new ListNode(current.value);
+			newnode.next = first;
+			first = newnode;
+			current = current.next;
+		 }
+		 this.first = first;
+		  return head;
+		 
+		
 	 }
 	
 
@@ -145,6 +177,11 @@ public class LinkList {
 		List.findx(2);
 		List.findpos(7);
 		List.delete(0);
+		List.add(3, 7);
+		List.printall();
+		
+		List.deleteDuplicates(List.first);
+		List.reverseList(List.first);
 		List.printall();
 		// all right.I am genius
 
