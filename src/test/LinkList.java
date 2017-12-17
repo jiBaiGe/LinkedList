@@ -100,7 +100,7 @@ public class LinkList {
 		System.out.println(pos);
 	}
 	
-	public void printall (){             //print all node one by one 
+	 void printall (){             //print all node one by one 
 		ListNode current = first;
 		while (current != null){
 		current.print();
@@ -144,6 +144,7 @@ public class LinkList {
 //		  }return head;
 		 
 		 //第二种方法
+		 
 		 ListNode first =null;
 		 ListNode current = head;
 		 ListNode newnode =null;
