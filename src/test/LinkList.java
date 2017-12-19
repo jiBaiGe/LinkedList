@@ -161,25 +161,29 @@ public class LinkList {
 		
 	 }
 	 
-	 public static ListNode Merge(ListNode list1,ListNode list2) {
-		  ListNode node1 = list1;
+	 public  void Merge(ListNode list1,ListNode list2) {//将两个倒序的链表list2合并到list1中，合并结束仍是倒序。
+		  
 		  ListNode node2 = list2;
-		  ListNode previous = null;
-		  ListNode current = null;
-		  	while (node2 != null) {
-		  		current = node2;
-		  		
-		  		while(node1 !=null ) {  			
-		  			if(current.value > node1.value) {
-		  				previous.next = current;
-		  				current.next = node1;
-		  				break;
-		  			}
-		  			previous = node1;
-		  			node1 = node1.next;
-		  		}
+		  
+		  
+		  while(node2 != null) {
+			ListNode node1 = list1;  
+			 ListNode previous = list1; 
+		 ListNode  current = new ListNode(node2.value);
+		  while(node1 != null) {			  
+			  if(current.value >node1.value) {
+				  previous.next = current;
+				  current.next = node1;
+				  break;
+			  }
+			  previous = node1;
+			  node1 = node1.next;
 		  	}
-		  return node1;
+		  node2 = node2.next; 
+		  
+		  }
+		  
+		  
 	    }
 
      
@@ -192,8 +196,8 @@ public class LinkList {
 		List.addFirst(1);
 		List.addFirst(2);
 		List.addFirst(3);
-		List.add(1, 5);
-		List.add(2, 7);
+		List.add(1, 7);
+		List.add(2, 5);
 		List.printall();
 		List.findx(2);
 		List.findpos(7);
@@ -208,7 +212,9 @@ public class LinkList {
 		LinkList List2 = new LinkList();
 		
 		List2.addFirst(4);
-		 Merge(List.first, List2.first);
+		List2.addFirst(6);
+		List.Merge(List.first, List2.first);
+		List.printall();
 		// all right.I am genius
 
 	}
