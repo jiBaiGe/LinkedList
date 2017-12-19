@@ -160,7 +160,27 @@ public class LinkList {
 		 
 		
 	 }
-	
+	 
+	 public static ListNode Merge(ListNode list1,ListNode list2) {
+		  ListNode node1 = list1;
+		  ListNode node2 = list2;
+		  ListNode previous = null;
+		  ListNode current = null;
+		  	while (node2 != null) {
+		  		current = node2;
+		  		
+		  		while(node1 !=null ) {  			
+		  			if(current.value > node1.value) {
+		  				previous.next = current;
+		  				current.next = node1;
+		  				break;
+		  			}
+		  			previous = node1;
+		  			node1 = node1.next;
+		  		}
+		  	}
+		  return node1;
+	    }
 
      
 	public static void main(String[] args) {
@@ -183,7 +203,12 @@ public class LinkList {
 		
 		List.deleteDuplicates(List.first);
 		List.reverseList(List.first);
-		List.printall();
+		List.reverseList(List.first);
+		List.printall();		
+		LinkList List2 = new LinkList();
+		
+		List2.addFirst(4);
+		 Merge(List.first, List2.first);
 		// all right.I am genius
 
 	}
