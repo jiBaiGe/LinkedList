@@ -54,7 +54,7 @@ public class LinkList {
 		
 	}
 	
-	public void delete (int index){ //delete a specific node by position
+	public void delete (int index){  //delete a specific node by position
 		int pos = 0;
 		ListNode current = first;
 		ListNode previous = first;
@@ -160,6 +160,38 @@ public class LinkList {
 		 
 		
 	 }
+	 
+//	 public void Merge(ListNode list1,ListNode list2) {//将两个升序的链表list2合并到list1中，合并结束仍是升序。
+//		  
+//		  ListNode node2 = list2;
+//		  
+//		  
+//		  while(node2 != null) {
+//			ListNode node1 = list1;  
+//			 ListNode previous = list1;
+//			 
+//			 //将list2中每一个节点分别取出，往list1中插。
+//		 ListNode  current = new ListNode(node2.value);
+//		 
+//		  while(true) {	
+//			  	  
+//			  if(node1 == null || current.value < node1.value) {
+//				  //判断current节点是否比list1头结点大。
+//				  if(previous == node1) { current.next = previous; list1 = current;break;}
+//				  previous.next = current;
+//				  current.next = node1;
+//				  break;
+//			  }
+//			  previous = node1;
+//			  node1 = node1.next;
+//			  
+//		  	}
+//		  node2 = node2.next; 
+//		  
+//		  }
+//		  this.first =  list1;
+//		  
+//	    }
 	 
 	 public static ListNode Merge(ListNode list1,ListNode list2) {//将两个升序的链表list2合并到list1中，合并结束仍是升序。
 		  
