@@ -1,6 +1,7 @@
 
 
 // wrote by ye 
+
 //For understanding the LinkedList.
 
 package test;
